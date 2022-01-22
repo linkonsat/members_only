@@ -6,10 +6,4 @@ class MainpagesControllerTest < ActionDispatch::IntegrationTest
     get "/"
     assert_select "h1", "Welcome"
   end
-
-  test "should show mainpage" do
-    get mainpage_url(@mainpage)
-    assert_response :success
-  end
-
 end
