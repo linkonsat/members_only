@@ -7,10 +7,10 @@ class MainpagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "h1", "Welcome to the club!"
   end
 
-  test "Should redirect to users page when sign in is selected."
+  test "Should redirect to users page when sign in is selected." do
 
 end
 
-test "Should redirect to the user signup page when signup button is clicked"
+test "Should redirect to the user signup page when signup button is clicked" do
 end
 end
