@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mainpage %>
+
+<div>
+  <%= link_to "Edit this mainpage", edit_mainpage_path(@mainpage) %> |
+  <%= link_to "Back to mainpages", mainpages_path %>
+
+  <%= button_to "Destroy this mainpage", @mainpage, method: :delete %>
+</div>
