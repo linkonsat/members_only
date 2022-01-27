@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2022_01_25_052648) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "preview"
-    t.string "body"
-    t.bigint "users_id"
+    t.text "title"
+    t.text "preview"
+    t.text "body"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_posts_on_users_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,7 +37,5 @@ ActiveRecord::Schema.define(version: 2022_01_25_052648) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "posts", "users", column: "users_id"
+  add_foreign_key "posts", "users"
 end
-
-#User.create!(:user_name => "third", :bio => "Likes frogs", :email => "randomthird@gmail.com", :password => "123456")
