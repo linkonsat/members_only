@@ -39,3 +39,5 @@ ActiveRecord::Schema.define(version: 2022_01_25_052648) do
 
   add_foreign_key "posts", "users", column: "users_id"
 end
+
+#User.create!(:user_name => "third", :bio => "Likes frogs", :email => "randomthird@gmail.com", :password => "123456")
