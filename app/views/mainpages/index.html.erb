@@ -1,2 +1,15 @@
  
 <h1>Welcome to the club!</h1>
+<ul>
+<% @userposts.each do |user| %>
+    <li>
+    <%= user.user_name %>
+    </li>
+    <% user.posts.each do |post| %>
+        <li>
+        <%= post.title %>
+        </li>
+        <% end %>
+    <% end %>
+    </ul>
+
