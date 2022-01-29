@@ -1,0 +1,13 @@
+you made it. Here is were you create the post!
+<%= link_to current_user.email %>
+    <%= form_with model: @post do |form| %>
+
+        <%= form.label :title %>
+        <%= form.text_field :title  %>
+        <%= form.label :preview %>
+        <%= form.text_field :preview  %>
+        <%= form.label :body %>
+        <%= form.text_field:body  %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.submit %>
+        <% end %>

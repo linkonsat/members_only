@@ -1,0 +1,8 @@
+<% @user.each do |user| %>
+    <% if user.id == current_user.id %>
+    <% user.posts.each do |post| %>
+        <%= post.title %>
+        <%= post.body %>
+    <% end %>
+    <% end %>
+    <% end %>

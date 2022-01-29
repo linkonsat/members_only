@@ -1,5 +1,5 @@
  
-<h1>Welcome to the club!</h1>
+<h1>Welcome to the club!!!</h1>
 
 <% if user_signed_in? %>
   <%= link_to current_user.email, edit_user_registration_path %>
@@ -24,4 +24,6 @@
         <% end %>
     <% end %>
     </ul>
+<%= link_to "create post", url = "posts/new" %> 
 
+<%= link_to "View Posts", url = "all_post" %>
