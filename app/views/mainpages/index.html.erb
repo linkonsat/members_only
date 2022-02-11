@@ -24,6 +24,7 @@
         <% end %>
     <% end %>
     </ul>
+<% if user_signed_in? %>
 <%= link_to "create post", url = "posts/new" %> 
-
+<% end %>
 <%= link_to "View Posts", url = "all_post" %>
