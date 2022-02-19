@@ -12,7 +12,7 @@ gem install rails
 After that you can clone this repository by running. 
  
  ~~~
- git clone git@github.com:linkonsat/private_events.git
+ git clone git@github.com:linkonsat/members_only.git
  ~~~
  
  After that run the following commands in the newly installed directory.
