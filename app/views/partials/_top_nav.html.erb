@@ -1,0 +1,20 @@
+<div class="top_nav_bar">
+
+<% if user_signed_in? %>
+<div class="nav_bar_items">
+  <%= link_to current_user.email, edit_user_registration_path %>
+  </div>
+  <h1 class="nav_bar_itemss">Mystery Book.</h1>
+  <div class="nav_bar_items">
+  <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+ </div>
+  <% else %>
+  <div class="nav_bar_items">
+  <%= link_to "Log in", new_user_session_path %>
+  </div>
+  <h1 class= "nav_bar_items">Mystery Book.</h1>
+  <div class="nav_bar_items">
+  <%= link_to "Register", new_user_registration_path %>
+  </div>
+<% end %>
+</div>
