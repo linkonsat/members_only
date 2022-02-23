@@ -13,3 +13,69 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+html {
+   height: 100%;
+}
+
+ .top_nav_bar {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    background-color: rgb(189, 176, 247);
+    color: black;
+    border-bottom: solid;
+ }
+
+ .bottom_nav_bar {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    background-color: rgb(189, 176, 247);
+    color: black;
+    border-top: solid;
+ }
+ .nav_bar_items {
+    width: 33%;
+}
+
+.main_body_container {
+    display: flex; 
+    flex-direction: row;
+    height: 75%;
+    background-color: rgb(189, 176, 247);
+}
+.all_posts_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    align-items: center;
+    height: 100%;
+}
+.main_body_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new_post_container {
+    width: 50%;
+    height: 50%;
+}
+.all_post_container {
+    width: 50%;
+    height: 50%;
+    overflow: auto; 
+}
+
+.event_options {
+    height: 25%;
+    margin-bottom: 14%;
+}
