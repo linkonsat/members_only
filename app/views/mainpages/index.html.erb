@@ -1,5 +1,11 @@
 <%= render "partials/top_nav" %>
 <div class="posts_display_container">
+<div>
+<% if user_signed_in? %>
+<%= link_to "create post", url = "posts/new" %> 
+<% end %>
+</div>
+<div class="all_posts_container">
 <ul>
 <% @user.each do |user| %>
     <li>
@@ -16,9 +22,6 @@
         <% end %>
     <% end %>
     </ul>
-<% if user_signed_in? %>
-<%= link_to "create post", url = "posts/new" %> 
-<% end %>
-<%= link_to "View Posts", url = "all_post" %>
+    </div>
 </div>
 <%= render "partials/bottom_nav" %>
