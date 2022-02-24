@@ -10,6 +10,7 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
 
         @post.save
+        redirect_to "/"
     end
 
     def post_params

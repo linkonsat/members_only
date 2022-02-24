@@ -6,22 +6,25 @@
 <% end %>
 </div>
 <div class="all_posts_container">
-<ul>
-<% @user.each do |user| %>
-    <li>
+<% @post.each do |post| %>
+  <div class="post_container">
     <% if user_signed_in? %>
-    <%= user.user_name %>
+    <div class="post_container_header">
+    By <%= post.user.user_name %>.
+    </div>
+    <div>
+    <%= post.body %>
+    </div>
     <% else %>
-    Anonymous
+    <div>
+    By Anonymous.
+    </div>
+    <div class="post_container_header">
+    <%= post.preview %>
+    </div>
     <% end %>
-    </li>
-    <% user.posts.each do |post| %>
-        <li>
-        <%= post.title %>
-        </li>
-        <% end %>
+    </div>
     <% end %>
-    </ul>
     </div>
 </div>
 <%= render "partials/bottom_nav" %>

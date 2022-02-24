@@ -3,7 +3,7 @@ class MainpagesController < ApplicationController
 
   # GET /mainpages or /mainpages.json
   def index
-    @user = User.all
+    @post = Post.all
   end
 
   # GET /mainpages/1 or /mainpages/1.json
