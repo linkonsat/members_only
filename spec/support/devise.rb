@@ -7,3 +7,8 @@ RSpec.configure do |config|
   # config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
 end
+
+RSpec.configure do |config|
+    config.include Warden::Test::Helpers
+  end
+  
