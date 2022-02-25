@@ -68,6 +68,7 @@ html {
     align-self: center;
     align-items: center;
     height: 100%;
+    overflow: auto;
 }
 
 .posts_display_container {
@@ -115,4 +116,10 @@ html {
 .user_registration_container {
     border: groove;
 
+}
+
+.post_creation {
+    background-color: rgb(189, 176, 247);
+    height: 50px 
+    
 }

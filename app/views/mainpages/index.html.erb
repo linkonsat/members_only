@@ -2,7 +2,12 @@
 <div class="posts_display_container">
 <div>
 <% if user_signed_in? %>
+<div class="post_creation">
 <%= link_to "create post", url = "posts/new" %> 
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+</div>
 <% end %>
 </div>
 <div class="all_posts_container">

@@ -10,6 +10,7 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
 
         @post.save
+        flash.alert = "Post was sucessfully created!"
         redirect_to "/"
     end
 

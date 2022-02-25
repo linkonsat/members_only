@@ -3,11 +3,11 @@ you made it. Here is were you create the post!
     <%= form_with model: @post do |form| %>
 
         <%= form.label :title %>
-        <%= form.text_field :title  %>
+        <%= form.text_area :title  %>
         <%= form.label :preview %>
-        <%= form.text_field :preview  %>
+        <%= form.text_area :preview  %>
         <%= form.label :body %>
-        <%= form.text_field:body  %>
+        <%= form.text_area :body  %>
         <%= form.hidden_field :user_id, value: current_user.id %>
         <%= form.submit %>
         <% end %>
