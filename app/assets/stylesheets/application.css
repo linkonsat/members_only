@@ -109,3 +109,8 @@ html {
     height: 25%;
     margin-bottom: 14%;
 }
+
+.user_registration_container {
+    border: groove;
+
+}
