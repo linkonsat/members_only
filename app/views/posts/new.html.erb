@@ -1,13 +1,28 @@
-you made it. Here is were you create the post!
-<%= link_to current_user.email %>
+<%= render "partials/top_nav" %>
+<div class="posts_display_container">
+<div class="new_post_creation">
     <%= form_with model: @post do |form| %>
-
+        <div>
         <%= form.label :title %>
+        </div>
+        <div>
         <%= form.text_area :title  %>
+        </div>
+        <div>
         <%= form.label :preview %>
+        </div>
+        <div>
         <%= form.text_area :preview  %>
+        </div>
+        <div>
         <%= form.label :body %>
+        </div>
         <%= form.text_area :body  %>
         <%= form.hidden_field :user_id, value: current_user.id %>
+        <div>
         <%= form.submit %>
+        </div>
         <% end %>
+        </div>
+        </div>
+<%= render "partials/bottom_nav" %>

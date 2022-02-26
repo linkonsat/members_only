@@ -121,5 +121,13 @@ html {
 .post_creation {
     background-color: rgb(189, 176, 247);
     height: 50px 
-    
+
+}
+
+.new_post_creation {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    margin-top: 15px;
 }
