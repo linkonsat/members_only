@@ -1,8 +1,11 @@
-<div class="top_nav_bar">
+<div class="top_nav_bar nav_bar_minor_item">
 
 <% if user_signed_in? %>
-<div class="nav_bar_items">
-  <%= link_to current_user.email, edit_user_registration_path %>
+<div class="nav_bar_items ">
+  <%= link_to current_user.email, edit_user_registration_path %> 
+  <div>
+     <%= link_to "Home", url = "/" %>
+  </div>
   </div>
   <h1 class="nav_bar_items nav_bar_title" >Mystery 
   Book.</h1>

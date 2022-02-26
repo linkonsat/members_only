@@ -49,12 +49,14 @@ html {
     width: 33%;
     text-align: center;
 }
+
 .nav_bar_title {
     font-size: 3vmax;
 }
 
 .nav_bar_minor_item {
-    font-size: 4vw;
+    font-size: 15px;
+    
 }
 .nav_bar_header {
     position: fixed;
