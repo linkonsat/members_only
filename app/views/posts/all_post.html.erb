@@ -1,8 +1,20 @@
+<%= render "partials/top_nav" %>
+<div class="posts_display_container">
+<div class="all_posts_container">
 <% @user.each do |user| %>
     <% if user.id == current_user.id %>
     <% user.posts.each do |post| %>
+        <div class="post_container">
+        <div>
         <%= post.title %>
+        </div>
+        <div>
         <%= post.body %>
+        </div>
+        </div>
     <% end %>
     <% end %>
     <% end %>
+</div>
+</div>
+<%= render "partials/bottom_nav" %>
