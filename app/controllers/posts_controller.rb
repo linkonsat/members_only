@@ -14,6 +14,10 @@ class PostsController < ApplicationController
         redirect_to "/"
     end
 
+    def post_records 
+        PostRecordsJob.perform_async('bob', 5)
+    end
+
     def post_params
         params.require(:post).permit(:title, :body, :preview, :user_id)
       end

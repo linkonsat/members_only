@@ -53,6 +53,9 @@ gem 'devise'
 #Use simplecov for test coverage
 gem 'simplecov', require: false, group: :test
 
+#use sidekiq for background processing and threads to handle multiple jobs.
+gem 'sidekiq'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -1,0 +1,7 @@
+class User::PostRecordsJob
+  include Sidekiq::Job
+
+  def perform(*args)
+    # Do something
+  end
+end
