@@ -4,6 +4,7 @@ class MainpagesController < ApplicationController
   # GET /mainpages or /mainpages.json
   def index
     @post = Post.all
+    PostRecordsJob.perform_now('bob', 5)
   end
 
   # GET /mainpages/1 or /mainpages/1.json
