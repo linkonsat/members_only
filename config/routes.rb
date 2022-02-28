@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 authenticate :user, ->(user) { user.admin? } do
   mount Sidekiq::Web => '/sidekiq'
 end
-  root to: 'mainpages#index'
+  root to: 'posts#index'
   resources :mainpages
   resources :user
   resources :posts
