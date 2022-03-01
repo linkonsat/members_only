@@ -1,11 +1,7 @@
 class User < ApplicationRecord
-  validates :email, uniqueness: true
-  validates :user_name, uniqueness: true
-  validate do |user|
-    errors.add :email, :not_unique, message: "This email has already been taken. Select another"
-    errors.add :user_name, :not_unique, message: "This username has already been taken. Please select another."
-  #debugger
-  end
+  validates :email, uniqueness: { message:  "Email is already taken. Please select another. "}
+  validates :user_name, uniqueness: { message: "User name is already taken. Please select another."}
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
