@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+user_count = 0
+post_count = 0
+5.times do 
+    user_count += 1
+User.create!(:user_name => "user#{user_count}", :bio => "I am user #{user_count}", :email => "user#{user_count}@gmail.com", :password => "#{user_count}12345", :admin => false)
+end
+
+5.times do 
+    post_count += 1
+    Post.create!(:title => "My first post!", :preview => "I....", :body => "I am a test user", :user_id => post_count)
+end
