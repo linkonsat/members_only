@@ -1,9 +1,10 @@
-class AdminsController < ApplicationController
+# frozen_string_literal: true
 
-    def dashboard 
-        if(current_user.admin?)
-        else
-            redirect_to "/"
-        end
+class AdminsController < ApplicationController
+  def dashboard
+    if current_user.admin?
+    else
+      redirect_to '/'
     end
+  end
 end
