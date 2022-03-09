@@ -7,7 +7,7 @@ ruby '2.7.4'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder'
-gem 'jsbundling-rails'
+gem "importmap-rails"
 gem 'letter_opener', group: :development
 gem 'net-http'
 gem 'pg'
