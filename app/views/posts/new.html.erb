@@ -1,28 +1,28 @@
 <%= render "partials/top_nav" %>
 <div class="posts_display_container">
-<div class="new_post_creation">
+  <div class="new_post_creation">
     <%= form_with model: @post do |form| %>
-        <div>
+      <div>
         <%= form.label :title %>
-        </div>
-        <div>
+      </div>
+      <div>
         <%= form.text_area :title  %>
-        </div>
-        <div>
+      </div>
+      <div>
         <%= form.label :preview %>
-        </div>
-        <div>
+      </div>
+      <div>
         <%= form.text_area :preview  %>
-        </div>
-        <div>
+      </div>
+      <div>
         <%= form.label :body %>
-        </div>
+      </div>
         <%= form.text_area :body  %>
         <%= form.hidden_field :user_id, value: current_user.id %>
-        <div>
+      <div>
         <%= form.submit %>
-        </div>
-        <% end %>
-        </div>
-        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <%= render "partials/bottom_nav" %>

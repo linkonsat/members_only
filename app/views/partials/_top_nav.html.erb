@@ -1,26 +1,28 @@
 <div class="top_nav_bar nav_bar_minor_item">
 
 <% if user_signed_in? %>
-<div class="nav_bar_items ">
-  <%= link_to current_user.email, edit_user_registration_path %> 
-  <div>
-     <%= link_to "Home", url = "/" %>
+  <div class="nav_bar_item">
+    <%= link_to current_user.email, edit_user_registration_path %> 
+    <div>
+       <%= link_to "Home", url = "/" %>
+    </div>
+    </div>
+    <h1 class="nav_bar_item nav_bar_title">
+      Mystery Book.
+    </h1>
+    <div class="nav_bar_item">
+    <%= button_to "Log out", destroy_user_session_path, method: :delete %>
   </div>
+<% else %>
+  <div class="nav_bar_item">
+    <%= link_to "Log in", new_user_session_path %>
   </div>
-  <h1 class="nav_bar_items nav_bar_title">Mystery 
-  Book.</h1>
-  <div class="nav_bar_items">
-  <%= button_to "Log out", destroy_user_session_path, method: :delete %>
- </div>
-  <% else %>
-  <div class="nav_bar_items">
-  <%= link_to "Log in", new_user_session_path %>
-  </div>
-  <h1 class= "nav_bar_items">Mystery 
-  Book.</h1>
+  <h1 class= "nav_bar_item">
+    Mystery Book.
+  </h1>
   
-  <div class="nav_bar_items">
-  <%= link_to "Register", new_user_registration_path %>
+  <div class="nav_bar_item">
+    <%= link_to "Register", new_user_registration_path %>
   </div>
 <% end %>
 </div>

@@ -3,12 +3,16 @@
     "coverage": {
       "/home/macdaniel/Documents/members_only/spec/controllers/user_controller_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1
         ]
       },
       "/home/macdaniel/Documents/members_only/spec/rails_helper.rb": {
         "lines": [
+          null,
+          null,
           null,
           1,
           1,
@@ -80,6 +84,8 @@
       },
       "/home/macdaniel/Documents/members_only/spec/support/controller_macros.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           0,
@@ -95,6 +101,8 @@
       "/home/macdaniel/Documents/members_only/config/environment.rb": {
         "lines": [
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -103,6 +111,8 @@
       },
       "/home/macdaniel/Documents/members_only/config/application.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -129,6 +139,8 @@
       },
       "/home/macdaniel/Documents/members_only/config/boot.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -137,6 +149,8 @@
       },
       "/home/macdaniel/Documents/members_only/config/environments/test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -204,6 +218,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -217,6 +233,7 @@
       },
       "/home/macdaniel/Documents/members_only/config/initializers/content_security_policy.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -565,6 +582,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           null
@@ -572,6 +591,7 @@
       },
       "/home/macdaniel/Documents/members_only/config/initializers/inflections.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -602,11 +622,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/spec/factories.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -617,6 +640,9 @@
       },
       "/home/macdaniel/Documents/members_only/config/routes.rb": {
         "lines": [
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -624,6 +650,7 @@
           1,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -634,67 +661,104 @@
           null
         ]
       },
-      "/home/macdaniel/Documents/members_only/app/models/user.rb": {
+      "/home/macdaniel/Documents/members_only/app/models/admin.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          null,
           null,
           null,
           1,
           null,
+          null,
           1,
+          null,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
+          1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/members_only/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/members_only/app/helpers/admins_helper.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/app/helpers/mainpages_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/app/helpers/post_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/app/helpers/posts_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/app/helpers/user_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/spec/support/factory_bot.rb": {
         "lines": [
-          1,
-          1,
           null,
+          null,
+          1,
+          1,
           null
         ]
       },
       "/home/macdaniel/Documents/members_only/spec/support/chrome.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           5,
@@ -708,19 +772,41 @@
       },
       "/home/macdaniel/Documents/members_only/spec/support/devise.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
           null,
           null,
           1,
           null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
           null,
           1,
           1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/members_only/spec/helpers/admins_helper_spec.rb": {
+        "lines": [
           null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -731,6 +817,8 @@
       },
       "/home/macdaniel/Documents/members_only/spec/helpers/post_helper_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -750,6 +838,8 @@
       },
       "/home/macdaniel/Documents/members_only/spec/helpers/posts_helper_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -769,6 +859,8 @@
       },
       "/home/macdaniel/Documents/members_only/spec/helpers/user_helper_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -780,6 +872,17 @@
           null,
           null,
           null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/members_only/spec/models/admin_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
           null,
           1,
           1,
@@ -788,11 +891,12 @@
       },
       "/home/macdaniel/Documents/members_only/spec/models/post_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
           1,
-          null,
           null,
           1,
           null,
@@ -801,18 +905,37 @@
       },
       "/home/macdaniel/Documents/members_only/app/models/post.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
         ]
       },
+      "/home/macdaniel/Documents/members_only/spec/requests/admins_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/macdaniel/Documents/members_only/spec/requests/mainpage_spec.rb": {
         "lines": [
+          null,
+          null,
           1
         ]
       },
       "/home/macdaniel/Documents/members_only/spec/requests/post_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -824,6 +947,8 @@
       },
       "/home/macdaniel/Documents/members_only/spec/requests/posts_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -835,35 +960,39 @@
       },
       "/home/macdaniel/Documents/members_only/spec/requests/user_spec.rb": {
         "lines": [
+          null,
+          null,
           1
         ]
       },
       "/home/macdaniel/Documents/members_only/spec/system/devise_forms_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
           1,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null
@@ -871,86 +1000,43 @@
       },
       "/home/macdaniel/Documents/members_only/spec/system/index_page_spec.rb": {
         "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
           null,
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/macdaniel/Documents/members_only/app/controllers/posts_controller.rb": {
-        "lines": [
           1,
           1,
           0,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          8,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
           0,
           null,
           null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/macdaniel/Documents/members_only/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
           null,
           1,
+          1,
+          0,
+          0,
+          0,
+          0,
           null,
           1,
-          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1646175586
+    "timestamp": 1647496745
   }
 }
