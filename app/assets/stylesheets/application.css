@@ -148,3 +148,6 @@ html {
     border: solid 1px;
 }
 
+.text_alignment {
+    text-align: center;
+}
