@@ -16,9 +16,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    @post.save
+    if(@post.save)
     flash.alert = 'Post was sucessfully created! x'
     redirect_to '/'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def post_records
