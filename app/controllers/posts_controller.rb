@@ -25,7 +25,6 @@ class PostsController < ApplicationController
   end
 
   def post_records
-    PostRecordsJob.perform_async('bob', 5)
   end
 
   def post_params

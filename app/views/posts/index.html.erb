@@ -6,8 +6,8 @@
         <div class="text_alignment">
           <%= link_to "create post", url = "posts/new" %>  
         </div>
-        <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name, data: { action: "click->flash#removeText", flash_target: "flash" } %> 
+        <% flash.each do |msg| -%>
+          <%= content_tag :div, msg[1],  data: { action: "click->flash#removeText", flash_target: "flash" }, class: "success_flash" %> 
         <% end %>
       </div>
     <% end %>

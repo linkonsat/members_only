@@ -151,3 +151,8 @@ html {
 .text_alignment {
     text-align: center;
 }
+
+.success_flash {
+    background-color: rgb(0, 255, 0);
+    border: groove 1px;
+}
