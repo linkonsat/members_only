@@ -2,4 +2,16 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+
+  scope :initial_index_page_posts, -> { where(id: (0)..25) }
+  scope :all_posts_page_count, -> { all.length / 25}
+
+  def self.display_index_posts(params)
+    page_link_count = Post.all_posts_page_count
+    chosen_link = page_link_count - params["page_number"].to_i 
+    start_count = chosen_link * 25
+    end_count = (chosen_link + 1) * 25
+    posts = Post.where(id: (start_count)..end_count)
+  return posts
+  end
 end
