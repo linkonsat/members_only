@@ -11,14 +11,11 @@ class PostsController < ApplicationController
 
   def index
     if(!params.key?("page_number"))
-      @post = Post.where(id: (0)..25)
-      @page_link_count = Post.all.length / 25
+      @post = Post.initial_index_page_posts
+      @page_link_count = Post.all_posts_page_count
     else
-      @page_link_count = Post.all.length / 25
-      chosen_link = @page_link_count - params["page_number"].to_i 
-      start_count = chosen_link * 25
-      end_count = (chosen_link + 1) * 25
-      @post = Post.where(id: (start_count)..end_count)
+      @page_link_count = Post.all_posts_page_count
+      @post = Post.display_index_posts(params)
     end
   end
 
