@@ -35,6 +35,11 @@
         <% end %>
        </div>
     <% end %>
+    <div>
+    <% @page_link_count.times do |number| %>
+    <%= link_to "#{number}", url = "/?page_number=#{number}" %>
+    <% end %>
+    </div>
   </div>
 </div>
 <%= render "partials/bottom_nav" %>

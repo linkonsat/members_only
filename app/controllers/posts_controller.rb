@@ -10,7 +10,16 @@ class PostsController < ApplicationController
   end
 
   def index
-    @post = Post.all
+    if(!params.key?("page_number"))
+      @post = Post.where(id: (0)..25)
+      @page_link_count = Post.all.length / 25
+    else
+      @page_link_count = Post.all.length / 25
+      chosen_link = @page_link_count - params["page_number"].to_i 
+      start_count = chosen_link * 25
+      end_count = (chosen_link + 1) * 25
+      @post = Post.where(id: (start_count)..end_count)
+    end
   end
 
   def create
@@ -28,6 +37,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :preview, :user_id)
+    params.require(:post).permit(:title, :body, :preview, :user_id, :page_number)
   end
 end
