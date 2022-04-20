@@ -12,7 +12,7 @@ post_count = 0
 100.times do
   user_count += 1
   User.create!(user_name: "user#{user_count}", bio: "I am user #{user_count}",
-               email: "user#{user_count}@gmail.com", password: "#{user_count}12345", admin: false)
+               email: "user#{user_count}@gmail.com", password: "123456789", admin: false)
 end
 
 100.times do
