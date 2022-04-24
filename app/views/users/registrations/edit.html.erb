@@ -3,7 +3,7 @@
 <div class="posts_display_container">
 <div class="user_registration_container">
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="field">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
