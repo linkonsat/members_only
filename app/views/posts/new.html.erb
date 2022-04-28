@@ -2,19 +2,19 @@
 <div class="posts_display_container">
   <div class="new_post_creation">
     <%= form_with model: @post do |form| %>
-      <div>
+      <div class="field">
         <%= form.label :title %>
       </div>
       <div>
         <%= form.text_area :title  %>
       </div>
-      <div>
+      <div class="field">
         <%= form.label :preview %>
       </div>
       <div>
         <%= form.text_area :preview  %>
       </div>
-      <div>
+      <div class="field">
         <%= form.label :body %>
       </div>
         <%= form.text_area :body  %>
