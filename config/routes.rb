@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :user
   resources :posts
+  resources :game_profiles
+  resources :game_statistics
+  resources :user_games
+  resources :games 
+  resources :game_categories
+  resources :all_games
   get 'admins/dashboard', to: 'admins#dashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'all_post', to: 'posts#all_post'
