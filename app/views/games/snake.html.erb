@@ -1,0 +1,13 @@
+<%= render "partials/top_nav" %>
+<div class="posts_display_container">
+  <div class="snake_game_container" data-controller="snake">
+    <div class="reset_board" data-action="click->snake#clearBoard">
+      Reset
+    </div>
+    <div class="snake_container" data-controller="snake-player" data-controller="snake-food-item" data-snake-target="board">
+      <div class="start_position">
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "partials/bottom_nav" %>
