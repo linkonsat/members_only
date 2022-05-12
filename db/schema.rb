@@ -39,16 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_11_013705) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "game", force: :cascade do |t|
-    t.bigint "game_categorie_id"
-    t.text "title"
-    t.text "category"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["game_categorie_id"], name: "index_game_on_game_categorie_id"
-  end
-
   create_table "game_categories", force: :cascade do |t|
     t.bigint "all_game_id"
     t.text "category"
@@ -71,6 +61,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_11_013705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_game_id"], name: "index_game_statistics_on_user_game_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "game_categorie_id"
+    t.text "title"
+    t.text "category"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_categorie_id"], name: "index_games_on_game_categorie_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -109,10 +109,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_11_013705) do
     t.boolean "admin", default: false
   end
 
-  add_foreign_key "game", "game_categories", column: "game_categorie_id"
   add_foreign_key "game_categories", "all_games"
   add_foreign_key "game_profiles", "users"
   add_foreign_key "game_statistics", "user_games"
+  add_foreign_key "games", "game_categories", column: "game_categorie_id"
   add_foreign_key "posts", "users"
   add_foreign_key "rewards", "users"
   add_foreign_key "user_games", "game_profiles"
