@@ -5,4 +5,8 @@ FactoryBot.define do
     sequence(:email) { |n| "test-#{n.to_s.rjust(3, '0')}@sample.com" }
     password { '123456' }
   end
+
+  factory :post do 
+    user_id { 1 }
+  end
 end
