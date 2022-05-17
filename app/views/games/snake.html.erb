@@ -4,8 +4,13 @@
     <div class="reset_board" data-action="click->snake#clearBoard">
       Reset
     </div>
+    <div class="reset_board" data-action="click->snake#startGame">
+      Start
+    </div>
     <div class="snake_container" data-controller="snake-player" data-controller="snake-food-item" data-snake-target="board">
-      <div class="start_position">
+      <div class="start_position" data-snake-target="player">
+      </div>
+      <div class="fruit" data-snake-target="enemy">
       </div>
     </div>
   </div>
