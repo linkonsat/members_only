@@ -1,5 +1,10 @@
 <%= render "partials/top_nav" %>
 <div class="posts_display_container">
+<div class="instructions">
+Press "A" to go left, "S" to go down, "W" to go up, and "D" to go left.
+<p>Next update will allow the snake to move and generate additional fruit to eat!</p>
+<p>Keep in mind you must refresh to reset the board at this time.</p>
+</div>
   <div class="snake_game_container" data-controller="snake">
     <div class="reset_board" data-action="click->snake#clearBoard">
       Reset
