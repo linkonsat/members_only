@@ -48,12 +48,12 @@ export default class extends Controller {
 
   getPlayerColumn() {
     let playerProperty = window.getComputedStyle(this.playerTarget)
-    return playerProperty.getPropertyValue('grid-column')
+    return playerProperty.getPropertyValue('grid-column').replace(/\D/g, "");
   }
 
   getPlayerRow() {
     let playerProperty = window.getComputedStyle(this.playerTarget)
-    return playerProperty.getPropertyValue('grid-row')
+    return playerProperty.getPropertyValue('grid-row').replace(/\D/g, "");
   }
 
   moveUp() {
@@ -79,6 +79,7 @@ export default class extends Controller {
 
   moveLeft() {
     this.clearIntervals()
+    console.log(typeof this.getPlayerColumn())
     this.playerTarget.style.gridColumn = `${Number(this.getPlayerColumn()) - 1}`;
     setInterval(() => this.moveLeft(), 1000);
     this.foundEnemy();
@@ -104,7 +105,7 @@ export default class extends Controller {
   enemyCoordinates() {
     let enemy = window.getComputedStyle(this.enemyTarget) 
     console.log(this.enemyTarget)
-    return [enemy.getPropertyValue('grid-row'),enemy.getPropertyValue('grid-column')]
+    return [enemy.getPropertyValue('grid-row').replace(/\D/g, ""),enemy.getPropertyValue('grid-column').replace(/\D/g, "")]
   }
 
   addTail() {
