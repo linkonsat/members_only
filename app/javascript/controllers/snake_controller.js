@@ -58,32 +58,53 @@ export default class extends Controller {
 
   moveUp() {
     this.clearIntervals()
-    this.playerTarget.style.gridRow = `${Number(this.getPlayerRow()) - 1}`;
+    if(this.playerTargets.length != 1) {
+      this.moveTail()
+      } 
+    this.playerTargets[0].style.gridRow = `${Number(this.getPlayerRow()) - 1}`;
     setInterval(() => this.moveUp(), 1000);
     this.foundEnemy();
   };
 
   moveDown() {
     this.clearIntervals()
-    this.playerTarget.style.gridRow = `${Number(this.getPlayerRow()) + 1}`;
+    if(this.playerTargets.length != 1) {
+      this.moveTail()
+      } 
+    this.playerTargets[0].style.gridRow = `${Number(this.getPlayerRow()) + 1}`;
     setInterval(() => this.moveDown(), 1000);
     this.foundEnemy();
   };
 
   moveRight() {
     this.clearIntervals()
-    this.playerTarget.style.gridColumn = `${Number(this.getPlayerColumn()) + 1}`;
+    if(this.playerTargets.length != 1) {
+      this.moveTail()
+      } 
+    this.playerTargets[0].style.gridColumn = `${Number(this.getPlayerColumn()) + 1}`;
     setInterval(() => this.moveRight(), 1000);
     this.foundEnemy();
   };
 
   moveLeft() {
     this.clearIntervals()
-    console.log(typeof this.getPlayerColumn())
-    this.playerTarget.style.gridColumn = `${Number(this.getPlayerColumn()) - 1}`;
+    if(this.playerTargets.length != 1) {
+      this.moveTail()
+      } 
+    this.playerTargets[0].style.gridColumn = `${Number(this.getPlayerColumn()) - 1}`;
     setInterval(() => this.moveLeft(), 1000);
     this.foundEnemy();
   };
+
+  moveTail() {
+    for (let i = 1; i < this.playerTargets.length; i++) {
+      let playerProperty = window.getComputedStyle(this.playerTargets[i - 1])
+      let tailColumn = playerProperty.getPropertyValue('grid-column').replace(/\D/g, "");
+      let tailRow = playerProperty.getPropertyValue('grid-row').replace(/\D/g, "");
+      this.playerTargets[i].style.gridColumn = `${Number(tailColumn)}`
+      this.playerTargets[i].style.gridRow = `${Number(tailRow)}`    
+    }
+  }
 
   foundEnemy() {
     if(this.equalCoordinates()){
