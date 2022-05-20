@@ -46,6 +46,13 @@ export default class extends Controller {
      };
   };
 
+  generateEnemy() {
+    const fruitDiv = document.createElement("div")
+    this.boardTarget.appendChild(fruitDiv)
+    fruitDiv.classList.add("fruit")
+    fruitDiv.dataset.snakeTarget = "enemy"
+  }
+
   getPlayerColumn() {
     let playerProperty = window.getComputedStyle(this.playerTarget)
     return playerProperty.getPropertyValue('grid-column').replace(/\D/g, "");
@@ -96,19 +103,30 @@ export default class extends Controller {
     this.foundEnemy();
   };
 
-  moveTail() {
-    for (let i = 1; i < this.playerTargets.length; i++) {
-      let playerProperty = window.getComputedStyle(this.playerTargets[i - 1])
+  bodyValues() {
+    let values = []
+    for (let i = 0; i < this.playerTargets.length; i++) {
+      let playerProperty = window.getComputedStyle(this.playerTargets[i])
       let tailColumn = playerProperty.getPropertyValue('grid-column').replace(/\D/g, "");
       let tailRow = playerProperty.getPropertyValue('grid-row').replace(/\D/g, "");
-      this.playerTargets[i].style.gridColumn = `${Number(tailColumn)}`
-      this.playerTargets[i].style.gridRow = `${Number(tailRow)}`    
+      values.push([Number(tailColumn),Number(tailRow)])
+    }
+    return values
+  };
+
+  moveTail() {
+    let positions = this.bodyValues()
+      for (let i = 1; i < this.playerTargets.length; i++) {
+      let targetPosition = positions[i - 1]
+      this.playerTargets[i].style.gridColumn = `${targetPosition[0]}`
+      this.playerTargets[i].style.gridRow = `${targetPosition[1]}`    
     }
   }
 
   foundEnemy() {
     if(this.equalCoordinates()){
       this.addTail()
+      this.generateEnemy()
     }
   }
 
