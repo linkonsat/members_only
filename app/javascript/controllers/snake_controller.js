@@ -47,10 +47,13 @@ export default class extends Controller {
   };
 
   generateEnemy() {
+    let spot = this.emptyBoardSpot()
     const fruitDiv = document.createElement("div")
     this.boardTarget.appendChild(fruitDiv)
     fruitDiv.classList.add("fruit")
     fruitDiv.dataset.snakeTarget = "enemy"
+    fruitDiv.style.gridColumn = `${spot[0]}`
+    fruitDiv.style.gridRow = `${spot[1]}`    
   }
 
   getPlayerColumn() {
@@ -113,6 +116,20 @@ export default class extends Controller {
     }
     return values
   };
+
+  emptyBoardSpot() {
+    //first we know we need a loop
+    let boardSpot = [this.getRandomInt(11),this.getRandomInt(11)]
+    let positions = this.bodyValues()
+    while(positions.includes(boardSpot)) {
+      boardSpot = [this.getRandomInt(11),this.getRandomInt(11)]
+    }
+    return boardSpot
+  }
+
+  getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
   moveTail() {
     let positions = this.bodyValues()
