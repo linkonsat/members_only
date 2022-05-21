@@ -57,26 +57,40 @@ export default class extends Controller {
   }
 
   getPlayerColumn() {
-    let playerProperty = window.getComputedStyle(this.playerTarget)
+    let playerProperty = window.getComputedStyle(this.playerTargets[0])
     return playerProperty.getPropertyValue('grid-column').replace(/\D/g, "");
   }
 
   getPlayerRow() {
-    let playerProperty = window.getComputedStyle(this.playerTarget)
+    let playerProperty = window.getComputedStyle(this.playerTargets[0])
     return playerProperty.getPropertyValue('grid-row').replace(/\D/g, "");
   }
 
+  allyPiece(position) {
+    let allyPiece = true 
+    let allyPieces = this.bodyValues()
+    allyPieces.forEach((element) => {
+      if(element[0] == position[0] && element[1] == position[1]){
+        allyPiece = false 
+      }
+    });
+    return allyPiece
+  }
+ 
   moveUp() {
-    this.clearIntervals()
+    if(this.allyPiece([Number(this.getPlayerColumn()),Number(this.getPlayerRow()) - 1])){ 
+      this.clearIntervals()
     if(this.playerTargets.length != 1) {
       this.moveTail()
       } 
     this.playerTargets[0].style.gridRow = `${Number(this.getPlayerRow()) - 1}`;
     setInterval(() => this.moveUp(), 1000);
     this.foundEnemy();
+    }
   };
 
   moveDown() {
+    if(this.allyPiece([Number(this.getPlayerColumn()),Number(this.getPlayerRow()) + 1])){ 
     this.clearIntervals()
     if(this.playerTargets.length != 1) {
       this.moveTail()
@@ -84,9 +98,11 @@ export default class extends Controller {
     this.playerTargets[0].style.gridRow = `${Number(this.getPlayerRow()) + 1}`;
     setInterval(() => this.moveDown(), 1000);
     this.foundEnemy();
+    }
   };
 
   moveRight() {
+    if(this.allyPiece([Number(this.getPlayerColumn()) + 1,Number(this.getPlayerRow())])){ 
     this.clearIntervals()
     if(this.playerTargets.length != 1) {
       this.moveTail()
@@ -94,9 +110,11 @@ export default class extends Controller {
     this.playerTargets[0].style.gridColumn = `${Number(this.getPlayerColumn()) + 1}`;
     setInterval(() => this.moveRight(), 1000);
     this.foundEnemy();
+    }
   };
 
   moveLeft() {
+    if(this.allyPiece([Number(this.getPlayerColumn()) - 1,Number(this.getPlayerRow())])){ 
     this.clearIntervals()
     if(this.playerTargets.length != 1) {
       this.moveTail()
@@ -104,6 +122,7 @@ export default class extends Controller {
     this.playerTargets[0].style.gridColumn = `${Number(this.getPlayerColumn()) - 1}`;
     setInterval(() => this.moveLeft(), 1000);
     this.foundEnemy();
+    }
   };
 
   bodyValues() {
