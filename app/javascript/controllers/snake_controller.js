@@ -31,7 +31,7 @@ export default class extends Controller {
 
   changePath(event) {
    this.clearIntervals()
-     if (event.key === "w") { 
+       if (event.key === "w") { 
           this.moveUp(event);
 
      } else if (event.key === "s") { 
@@ -44,6 +44,12 @@ export default class extends Controller {
          this.moveRight(event);
 
      };
+
+     if(this.lose()) {
+      this.clearBoard()
+      this.setBoard()
+      alert("You lost! go ahead and try and score even higher!")
+    }
   };
 
   generateEnemy() {
@@ -54,6 +60,35 @@ export default class extends Controller {
     fruitDiv.dataset.snakeTarget = "enemy"
     fruitDiv.style.gridColumn = `${spot[0]}`
     fruitDiv.style.gridRow = `${spot[1]}`    
+  }
+
+  lose() {
+    let result = []
+    let body = this.bodyValues()
+    let playerPosition = [this.getPlayerColumn(), this.getPlayerRow()]
+    body.forEach((element) => {
+      if(element[0] == playerPosition[0] && element[1] == Number(playerPosition[1]) + 1) {
+        result.push(true)
+      }
+
+      if(element[0] == playerPosition[0] && element[1] == Number(playerPosition[1]) - 1){
+        result.push(true)
+      }
+
+      if(element[0] == Number(playerPosition[0]) + 1 && element[1] == playerPosition[1]) {
+        result.push(true)
+      }
+
+      if(element[0] == Number(playerPosition[0]) - 1 && element[1] == playerPosition[1]) {
+        result.push(true)
+      }
+    });
+
+    if(result.length == 4) {
+      return true
+    } else {
+      return false
+    }
   }
 
   getPlayerColumn() {
@@ -179,7 +214,6 @@ export default class extends Controller {
 
   enemyCoordinates() {
     let enemy = window.getComputedStyle(this.enemyTarget) 
-    console.log(this.enemyTarget)
     return [enemy.getPropertyValue('grid-row').replace(/\D/g, ""),enemy.getPropertyValue('grid-column').replace(/\D/g, "")]
   }
 
