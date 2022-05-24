@@ -4,6 +4,15 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = [ "board", "player", "enemy" ]
   
+  addScore() {
+    let score = document.getElementById("score")
+    score.textContent++
+  }
+
+  resetScore() {
+    let score = document.getElementById("score")
+    score.textContent = 1
+  }
   clearBoard() {
     while (this.boardTarget.firstChild) {
       this.boardTarget.removeChild(this.boardTarget.firstChild);
@@ -48,6 +57,7 @@ export default class extends Controller {
      if(this.lose()) {
       this.clearBoard()
       this.setBoard()
+      this.resetScore()
       alert("You lost! go ahead and try and score even higher!")
     }
   };
@@ -198,6 +208,7 @@ export default class extends Controller {
     if(this.equalCoordinates()){
       this.addTail()
       this.generateEnemy()
+      this.addScore()
     }
   }
 
