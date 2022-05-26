@@ -146,9 +146,11 @@ export default class extends Controller {
     if(this.playerTargets.length != 1) {
       this.moveTail()
       } 
+      if(Number(this.getPlayerRow()) < 10) {
     this.playerTargets[0].style.gridRow = `${Number(this.getPlayerRow()) + 1}`;
     setInterval(() => this.moveDown(), 1000);
     this.foundEnemy();
+      }
     }
   };
 
@@ -158,9 +160,11 @@ export default class extends Controller {
     if(this.playerTargets.length != 1) {
       this.moveTail()
       } 
+      if(Number(this.getPlayerColumn()) < 10) {
     this.playerTargets[0].style.gridColumn = `${Number(this.getPlayerColumn()) + 1}`;
     setInterval(() => this.moveRight(), 1000);
     this.foundEnemy();
+      }
     }
   };
 
@@ -190,14 +194,15 @@ export default class extends Controller {
   emptyBoardSpot() {
     let boardSpot = [this.getRandomInt(11),this.getRandomInt(11)]
     let positions = this.bodyValues()
-    let potentialSpots = []
-    while(potentialSpots.length != positions.length) {
-      potentialSpots = []
+    let potentialSpots = true
+    while(potentialSpots) {
       positions.forEach((element) => {
-      boardSpot = [this.getRandomInt(11),this.getRandomInt(11)]
       if(Number(element[0]) != boardSpot[0] && Number(element[1]) != boardSpot[1]){
-        potentialSpots.push(true)
-      }  
+        potentialSpots = false
+      }  else {
+        boardSpot = [this.getRandomInt(11),this.getRandomInt(11)]
+        potentialSpots = true
+      }
     })
     }
     return boardSpot
