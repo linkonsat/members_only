@@ -17,6 +17,7 @@ export default class extends Controller {
     while (this.boardTarget.firstChild) {
       this.boardTarget.removeChild(this.boardTarget.firstChild);
     }
+    document.removeEventListener('keydown', this.boundChangePath)
     this.setBoard()
   }
 
@@ -24,9 +25,12 @@ export default class extends Controller {
     const newDiv = document.createElement("div")
     this.boardTarget.appendChild(newDiv)
     newDiv.classList.add("start_position")
+    newDiv.dataset.snakeTarget = "player"
     const fruitDiv = document.createElement("div")
     this.boardTarget.appendChild(fruitDiv)
     fruitDiv.classList.add("fruit")
+    fruitDiv.dataset.snakeTarget = "enemy"
+    this.clearIntervals()
   }
 
   startGame() {
@@ -35,7 +39,8 @@ export default class extends Controller {
 
   startRound(event, nextCount = 9) {
     this.moveLeft()
-    document.addEventListener('keydown', this.changePath.bind(this));
+    this.boundChangePath = this.changePath.bind(this)
+    document.addEventListener('keydown', this.boundChangePath);
   }
 
   changePath(event) {
@@ -182,11 +187,17 @@ export default class extends Controller {
   };
 
   emptyBoardSpot() {
-    //first we know we need a loop
     let boardSpot = [this.getRandomInt(11),this.getRandomInt(11)]
     let positions = this.bodyValues()
-    while(positions.includes(boardSpot)) {
+    let potentialSpots = []
+    while(potentialSpots.length != positions.length) {
+      potentialSpots = []
+      positions.forEach((element) => {
       boardSpot = [this.getRandomInt(11),this.getRandomInt(11)]
+      if(Number(element[0]) != boardSpot[0] && Number(element[1]) != boardSpot[1]){
+        potentialSpots.push(true)
+      }  
+    })
     }
     return boardSpot
   }
