@@ -60,6 +60,7 @@ export default class extends Controller {
      };
 
      if(this.lose()) {
+      this.addHighScore()
       this.clearBoard()
       this.setBoard()
       this.resetScore()
@@ -253,6 +254,14 @@ export default class extends Controller {
     for (let i = 1; i < 1000; i++) {
       clearInterval(i);
   }
+  }
+
+  addHighScore() {
+    let score = document.getElementById('high_score')
+    let currentScore = document.getElementById("score")
+    if(Number(currentScore.textContent) > Number(score.textContent)) {
+      score.textContent = `${Number(currentScore.textContent)}`
+    }
   }
 
 }
