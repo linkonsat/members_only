@@ -6,15 +6,28 @@ Press "A" to go left, "S" to go down, "W" to go up, and "D" to go left.
 <p>Keep in mind you must refresh to reset the board at this time.</p>
 </div>
   <div class="snake_game_container" data-controller="snake">
-    <div class="reset_board" data-action="click->snake#clearBoard">
+  <div class="scoreboard">
+    <div class="reset_board" data-action="click->snake#clearBoard" id="reset_board">
       Reset
     </div>
     <div class="reset_board" data-action="click->snake#startGame">
       Start
     </div>
+  </div>
+  <div class="scoreboard">
+    <div class="score">
+      Current score:
+    </div>
     <div class="score" id="score">
       1
     </div>
+    <div class="score">
+      High score:
+    </div>
+    <div class="score" id="high_score">
+      1
+    </div>
+  </div>
     <div class="snake_container" data-controller="snake-player" data-controller="snake-food-item" data-snake-target="board">
       <div class="start_position" data-snake-target="player">
       </div>
