@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    if(!params.key?("page_number") )
+    if(!params.key?("page_number") || params["page_number"] == "0")
       @post = Post.initial_index_page_posts
       @page_link_count = Post.all_posts_page_count
     else
