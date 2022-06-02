@@ -14,26 +14,65 @@
   </div>
   <div class="all_posts_container" data-controller="flash">
     <% @post.each do |post| %>
-      <div class="post_container">
         <% if user_signed_in? %>
+          <% if @post.index(post).even? %>
+          <div class="right_container">
+            <div class="post_container_header">
+              By <%= post.user.user_name %>.
+            </div>
+            <div>
+              <%= post.body %>
+            </div>
+            <div>
+              <%= post.created_at.to_datetime.strftime('%r') %>
+            </div>
+            <div>
+              Like button coming soon!
+            </div>
+          </div>
+          <% else %>
+          <div class="left_container">
           <div class="post_container_header">
-            By <%= post.user.user_name %>.
-          </div>
-          <div>
-            <%= post.body %>
-          </div>
-          <div>
-            Like button coming soon!
-          </div>
+              By <%= post.user.user_name %>.
+            </div>
+            <div>
+              <%= post.body %>
+            </div>
+            <div>
+              <%= post.created_at.to_datetime.strftime('%r') %>
+            </div>
+            <div>
+              Like button coming soon!
+            </div>
+            </div>
+          <% end %>
         <% else %>
-          <div>
-            By Anonymous.
-          </div>
-          <div class="post_container_header">
-            <%= post.preview %>
-          </div>
+           <% if @post.index(post).odd? %>
+           <div class="right_container">
+            <div>
+              By Anonymous.
+            </div>
+            <div class="post_container_header">
+              <%= post.preview %>
+            </div>
+            <div>
+              <%= post.created_at.to_datetime.strftime('%r') %>
+            </div>
+            </div>
+            <% else %>
+            <div class="left_container">
+              <div>
+                By Anonymous.
+              </div>
+              <div class="post_container_header">
+                <%= post.preview %>
+              </div>
+              <div>
+                <%= post.created_at.to_datetime.strftime('%r') %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-       </div>
     <% end %>
     <div>
     <% @page_link_count.times do |number| %>
