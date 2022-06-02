@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_02_200319) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_210943) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_200319) do
   create_table "all_games", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.text "title"
+    t.text "preview"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "game_categories", force: :cascade do |t|
@@ -118,6 +130,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_200319) do
     t.boolean "admin", default: false
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "game_categories", "all_games"
   add_foreign_key "game_profiles", "users"
   add_foreign_key "game_statistics", "user_games"

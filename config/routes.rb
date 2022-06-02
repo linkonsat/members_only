@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :games 
   resources :game_categories
   resources :all_games
+  resources :comments
   post '/likes/new', to: 'likes#new'
   get 'admins/dashboard', to: 'admins#dashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
