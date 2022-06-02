@@ -31,6 +31,7 @@
             </div>
             <div>
               <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
+              <%= post.likes.length %>
             </div>
           </div>
           <% else %>
@@ -46,6 +47,7 @@
             </div>
             <div>
             <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
+            <%= post.likes.length %>
             </div>
             </div>
           <% end %>
@@ -63,6 +65,7 @@
             </div>
             <div> 
               <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
+              <%= post.likes.length %>
             </div>
             </div>
             <% else %>
@@ -78,6 +81,7 @@
               </div>
               <div> 
               <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
+              <%= post.likes.length %>
             </div>
             </div>
           <% end %>
