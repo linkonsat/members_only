@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_11_013705) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_200319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_11_013705) do
     t.index ["game_categorie_id"], name: "index_games_on_game_categorie_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "title"
     t.text "preview"
@@ -113,6 +122,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_11_013705) do
   add_foreign_key "game_profiles", "users"
   add_foreign_key "game_statistics", "user_games"
   add_foreign_key "games", "game_categories", column: "game_categorie_id"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "rewards", "users"
   add_foreign_key "user_games", "game_profiles"

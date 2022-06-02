@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :likes
 
   scope :initial_index_page_posts, -> { where(id: (0)..25) }
   scope :all_posts_page_count, -> { all.length / 25}
