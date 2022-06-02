@@ -223,10 +223,12 @@ a:link {
 
 .left_container {
     align-self: start;
+    height: auto;
 }
 
 .right_container {
     align-self: right;
+    height: auto;
 }
 
 .new_post_creation {
