@@ -3,8 +3,8 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="night-sky"
 export default class extends Controller {
   connect() {
-    let w = window.innerWidth;
-    let h = window.innerHeight;
+    let w = window.screen.availWidth;
+    let h = window.screen.availHeight;
     let i = 1;
     let limit = this.getRndInteger(400, 900);
     
