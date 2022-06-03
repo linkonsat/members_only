@@ -78,17 +78,14 @@
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
                 <div> 
-                  <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
                   <%= post.likes.length %>
-                  <div data-controller="comment" data-action="click->comment#revealForm">
-                    Comment
-                  </div> 
-                  <div class="comment_form">
-                    <div>
-                      <%= render partial: "/partials/new_comment", locals: {comment: @comment,  post_id: post.id } %>
-                    </div>
-                  </div>
-                 </div>
+                  <% if post.comments.first != nil %>
+                    Comment <%= post.comments.first.body %>
+                  <% else %>
+                    Be the first to comment!
+                  <% end %>
+                </div>
+              </div>
             <% else %>
             <div class="left_container">
               <div>
@@ -101,17 +98,14 @@
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
               <div> 
-                <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
                 <%= post.likes.length %>
-                <div data-controller="comment" data-action="click->comment#revealForm">
-                  Comment
-                </div> 
-                <div class="comment_form">
-                  <div>
-                    <%= render partial: "/partials/new_comment", locals: {comment: @comment,  post_id: post.id } %>
-                   </div>
-               </div>
+                <% if post.comments.first != nil %>
+                    Comment <%= post.comments.first.body %>
+                  <% else %>
+                    Be the first to comment!
+                  <% end %>
               </div>
+            </div>
           <% end %>
         <% end %>
     <% end %>
