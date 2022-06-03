@@ -31,7 +31,7 @@
               </div>
               <div>
                 <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
-                <%= post.likes.length %>
+                Likes: <%= post.likes.length %>
               </div>
                 <div data-controller="comment" data-action="click->comment#revealForm"> 
                   Comment
@@ -54,8 +54,13 @@
             </div>
             <div>
               <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
-              <%= post.likes.length %>
+              Likes: <%= post.likes.length %>
             </div>
+            <% if post.comments.first != nil %>
+              Comment <%= post.comments.first.body %>
+            <% else %>
+              Be the first to comment!
+            <% end %>
               <div data-controller="comment" data-action="click->comment#revealForm">
                 Comment
               </div> 
@@ -78,12 +83,14 @@
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
                 <div> 
-                  <%= post.likes.length %>
+                  Likes: <%= post.likes.length %>
+                  <div>
                   <% if post.comments.first != nil %>
                     Comment <%= post.comments.first.body %>
                   <% else %>
                     Be the first to comment!
                   <% end %>
+                  </div>
                 </div>
               </div>
             <% else %>
@@ -98,12 +105,14 @@
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
               <div> 
-                <%= post.likes.length %>
+                Likes: <%= post.likes.length %>
+                <div>
                 <% if post.comments.first != nil %>
                     Comment <%= post.comments.first.body %>
                   <% else %>
                     Be the first to comment!
                   <% end %>
+                </div>
               </div>
             </div>
           <% end %>
