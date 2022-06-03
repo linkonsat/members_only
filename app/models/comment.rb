@@ -8,7 +8,7 @@ class Comment < ApplicationRecord
         post_comments = self.post.comments
         post_comments.each do |comment|
             if(comment.user_id == self.user_id)
-                errors.add(:already_commented "You already commented on this.")
+                errors.add(:already_commented, "You already commented on this.")
             end
         end
     end

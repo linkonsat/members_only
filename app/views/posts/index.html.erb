@@ -19,7 +19,30 @@
     <% @post.each do |post| %>
         <% if user_signed_in? %>
           <% if @post.index(post).even? %>
-          <div class="right_container">
+            <div class="right_container">
+              <div class="post_container_header">
+                By <%= post.user.user_name %>.
+              </div>
+              <div>
+                <%= post.body %>
+              </div>
+              <div>
+                <%= post.created_at.to_datetime.strftime('%r') %>
+              </div>
+              <div>
+                <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
+                <%= post.likes.length %>
+              </div>
+                <div data-controller="comment" data-action="click->comment#revealForm"> 
+                  Comment
+                </div> 
+                <div class="comment_form">
+                  <div>
+                    <%= render partial: "/partials/new_comment", locals: {comment: @comment,  post_id: post.id } %>
+                  </div>
+                </div>
+          <% else %>
+          <div class="left_container">
             <div class="post_container_header">
               By <%= post.user.user_name %>.
             </div>
@@ -33,41 +56,39 @@
               <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
               <%= post.likes.length %>
             </div>
-          </div>
-          <% else %>
-          <div class="left_container">
-          <div class="post_container_header">
-              By <%= post.user.user_name %>.
-            </div>
-            <div>
-              <%= post.body %>
-            </div>
-            <div>
-              <%= post.created_at.to_datetime.strftime('%r') %>
-            </div>
-            <div>
-            <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
-            <%= post.likes.length %>
-            </div>
-            </div>
+              <div data-controller="comment" data-action="click->comment#revealForm">
+                Comment
+              </div> 
+              <div class="comment_form">
+                <div>
+                  <%= render partial: "/partials/new_comment", locals: {comment: @comment,  post_id: post.id } %>
+                </div>
+              </div>
           <% end %>
         <% else %>
            <% if @post.index(post).odd? %>
-           <div class="right_container">
-            <div>
-              By Anonymous.
-            </div>
-            <div class="post_container_header">
-              <%= post.preview %>
-            </div>
-            <div>
-              <%= post.created_at.to_datetime.strftime('%r') %>
-            </div>
-            <div> 
-              <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
-              <%= post.likes.length %>
-            </div>
-            </div>
+              <div class="right_container">
+                <div>
+                  By Anonymous.
+                </div>
+              <div class="post_container_header">
+                <%= post.preview %>
+              </div>
+              <div>
+                <%= post.created_at.to_datetime.strftime('%r') %>
+              </div>
+                <div> 
+                  <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
+                  <%= post.likes.length %>
+                  <div data-controller="comment" data-action="click->comment#revealForm">
+                    Comment
+                  </div> 
+                  <div class="comment_form">
+                    <div>
+                      <%= render partial: "/partials/new_comment", locals: {comment: @comment,  post_id: post.id } %>
+                    </div>
+                  </div>
+                 </div>
             <% else %>
             <div class="left_container">
               <div>
@@ -80,17 +101,24 @@
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
               <div> 
-              <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
-              <%= post.likes.length %>
-            </div>
-            </div>
+                <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
+                <%= post.likes.length %>
+                <div data-controller="comment" data-action="click->comment#revealForm">
+                  Comment
+                </div> 
+                <div class="comment_form">
+                  <div>
+                    <%= render partial: "/partials/new_comment", locals: {comment: @comment,  post_id: post.id } %>
+                   </div>
+               </div>
+              </div>
           <% end %>
         <% end %>
     <% end %>
     <div>
-    <% @page_link_count.times do |number| %>
-    <%= link_to "#{number}", url = "/?page_number=#{number}" %>
-    <% end %>
+      <% @page_link_count.times do |number| %>
+        <%= link_to "#{number}", url = "/?page_number=#{number}" %>
+      <% end %>
     </div>
   </div>
 </div>

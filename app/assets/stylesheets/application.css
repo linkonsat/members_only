@@ -42,6 +42,7 @@ a:link {
   .field {
     margin-top: 5px;
     margin-bottom: 5px;
+    color: black;
   }
  .top_nav_bar {
     display: flex;
@@ -178,6 +179,11 @@ a:link {
     padding: 5px;
     margin-bottom: 10px;
     align-self: start;
+}
+
+.comment_form {
+    display: none;
+    color: black;
 }
 
 .right_container {
