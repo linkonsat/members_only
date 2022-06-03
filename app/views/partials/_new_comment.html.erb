@@ -1,17 +1,17 @@
 <%= form_with model: comment do |form| %>
-    <div class="field">
+    <div class="comment_field">
         <%= form.label :title %>
       </div>
       <div>
         <%= form.text_area :title  %>
       </div>
-      <div class="field">
+      <div class="comment_field">
         <%= form.label :preview %>
       </div>
       <div>
         <%= form.text_area :preview  %>
       </div>
-      <div class="field">
+      <div class="comment_field">
         <%= form.label :body %>
       </div>
         <%= form.text_area :body  %>
