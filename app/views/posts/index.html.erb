@@ -23,16 +23,26 @@
               <div class="post_container_header">
                 By <%= post.user.user_name %>.
               </div>
-              <div>
+              <div class="comment">
                 <%= post.body %>
               </div>
+              <div class="post_data">
               <div>
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
-              <div>
                 <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
-                Likes: <%= post.likes.length %>
+              <div>  
+                <%= post.likes.length %>
               </div>
+              </div>
+              <% if post.comments.first != nil %>
+                Comment by <%= post.comments.first.user.user_name %>
+              <div>
+                <%= post.comments.first.body %>
+              </div>
+            </div>
+          <% else %>
+              Be the first to comment!
                 <div data-controller="comment" data-action="click->comment#revealForm"> 
                   Comment
                 </div> 
@@ -41,24 +51,32 @@
                     <%= render partial: "/partials/new_comment", locals: {comment: @comment,  post_id: post.id } %>
                   </div>
                 </div>
+          <% end %>
           <% else %>
           <div class="left_container">
             <div class="post_container_header">
               By <%= post.user.user_name %>.
             </div>
-            <div>
+            <div class="comment">
               <%= post.body %>
             </div>
+            <div class="post_data">
             <div>
               <%= post.created_at.to_datetime.strftime('%r') %>
             </div>
             <div>
               <%= button_to "Like", new_like_path, params: { user_id: current_user, post_id: post.id }%>
-              Likes: <%= post.likes.length %>
             </div>
+              <div>  
+              <%= post.likes.length %>
+            </div>
+          </div>
             <% if post.comments.first != nil %>
-              Comment <%= post.comments.first.body %>
-            <% else %>
+                Comment by <%= post.comments.first.user.user_name %>
+              <div>
+                <%= post.comments.first.body %>
+              </div>
+          <% else %>
               Be the first to comment!
             <% end %>
               <div data-controller="comment" data-action="click->comment#revealForm">
@@ -79,14 +97,19 @@
               <div class="post_container_header">
                 <%= post.preview %>
               </div>
+              <div class="post_data">
               <div>
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
                 <div> 
                   Likes: <%= post.likes.length %>
+                </div>
                   <div>
                   <% if post.comments.first != nil %>
-                    Comment <%= post.comments.first.body %>
+                  Comment by <%= post.comments.first.user.user_name %>
+                  <div>
+                    <%= post.comments.first.body %>
+                  </div>
                   <% else %>
                     Be the first to comment!
                   <% end %>
@@ -101,14 +124,20 @@
               <div class="post_container_header">
                 <%= post.preview %>
               </div>
+              <div class="post_data">
               <div>
                 <%= post.created_at.to_datetime.strftime('%r') %>
               </div>
+              
               <div> 
                 Likes: <%= post.likes.length %>
+              </div>
                 <div>
                 <% if post.comments.first != nil %>
-                    Comment <%= post.comments.first.body %>
+                    Comment by <%= post.comments.first.user.user_name %>
+                    <div>
+                      <%= post.comments.first.body %>
+                    </div>
                   <% else %>
                     Be the first to comment!
                   <% end %>

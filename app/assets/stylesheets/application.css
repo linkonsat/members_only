@@ -39,6 +39,20 @@ a:link {
   a:visited {
     color: white;
   }
+
+  .comment {
+    border-bottom: solid 1px;
+  }
+
+  .post_data {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: solid 1px;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      align-items: flex-end;
+      padding-top: 5px;
+  }
   .field {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -207,6 +221,9 @@ a:link {
 
 .post_container_header {
     margin-bottom: 5px;
+    text-align: left;
+    text-emphasis: bold;
+    border-bottom: solid 1px;
 }
 
 .event_options {
