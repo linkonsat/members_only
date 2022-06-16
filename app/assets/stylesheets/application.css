@@ -355,3 +355,17 @@ body { text-align: center;
     100% {transform: scale(1);}
   }
 
+  @media screen and (max-width: 600px) {
+    .post_data {
+       flex-direction: column;
+       align-items: center;
+    }
+
+    .left_container {
+        width: auto;
+    }
+
+    .right_container {
+        width: auto;
+    }
+ }  

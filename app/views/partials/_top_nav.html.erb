@@ -3,12 +3,11 @@
 <% if user_signed_in? %>
   <div class="nav_bar_item">
     <%= link_to current_user.email, edit_user_registration_path %> 
-    <div>
-       <%= link_to "Home", url = "/" %>
-    </div>
     </div>
     <h1 class="nav_bar_item nav_bar_title">
-      New Times
+      <a href="/">
+        New Times
+      </a>
     </h1>
     <div class="nav_bar_item">
     <%= button_to "Log out", destroy_user_session_path, method: :delete %>
