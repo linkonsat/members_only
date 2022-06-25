@@ -52,6 +52,8 @@ After that you can clone this repository by running.
  ### Lessons Learned
  1. Learned how to use active record models to create simple belong to relations
  2. How to utilize devise to handle user authentication.
+ 3. How to use composition and single responsibility for functions to create a JavaScript based snake game.
+ 4. How to use model unit tests to test my active record postgreSQL search methods.
  
  ### Roadmap 
  
