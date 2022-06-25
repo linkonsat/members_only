@@ -248,8 +248,9 @@ export default class extends Controller {
   addTail() {
     const newDiv = document.createElement("div")
     newDiv.dataset.snakeTarget = "player"
-    newDiv.style.gridColumn = `${Number(this.getPlayerColumn()) + 1}`
-    newDiv.style.gridRow = `${Number(this.getPlayerRow())}`
+    let targetElement = window.getComputedStyle(this.playerTargets[this.playerTargets.length - 1])
+    newDiv.style.gridColumn = `${targetElement.getPropertyValue('grid-column')}`
+    newDiv.style.gridRow = `${targetElement.getPropertyValue('grid-row')}`
     newDiv.classList.add("snake_tail")
     this.enemyTarget.remove()
     this.boardTarget.appendChild(newDiv)
