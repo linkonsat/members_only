@@ -10,7 +10,7 @@
   <% end %>
 
   <% @messages.each do |message| %>
-
+    <% if message.created_at > Time.now %> 
     <article class="message">
       <div class="message-header">
         <%= message.user.email %>
@@ -19,6 +19,7 @@
         <%= message.body %>
       </div>
     </article>
+    <% end %>
   <% end %>
 
   <div id="message-display">

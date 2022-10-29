@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.4'
+gem 'aws-sdk-s3'  
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder'
