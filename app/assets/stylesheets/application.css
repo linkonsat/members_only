@@ -25,6 +25,10 @@ body {
 html {
    height: 100%;
 }
+
+h1 {
+    font-family: "Courier New";
+}
 .field {
     color: white;
     animation-duration: 2s;
@@ -166,7 +170,7 @@ a:link {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 75%;
+    height: 70%;
     background-color: black;
     color: black;
 }
